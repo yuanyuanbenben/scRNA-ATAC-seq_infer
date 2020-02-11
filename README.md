@@ -1,3 +1,14 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
 # scRNA-ATAC-seq_infer
 ***
 
@@ -12,10 +23,12 @@
 
 #### Loss
 
-![](http://latex.codecogs.com/gif.latex?\\begin{equation}\\begin{aligned}&\\mathcal{L}_{GAN}(G,D_Y,X,Y)\\\\&=E_{y\sim p_{data}(y)}[\\log D_Y(y)]+E_{x\\sim p_{data}(x)}[\\log (1-D_Y(G(x))]\\\\&\\mathcal{L}_{cyc}(G,F)=E_{x\\sim p_{data}(x)}[\\|F(G(x))-x\\|_1]+E_{y\\sim p_{data}(y)}[\\|F(G(y))-y\\|_1]\\\\\\Rightarrow&\\\\&\\mathcal{L}(G,F,D_X,D_Y)=\\mathcal{L}_{GAN}(G,D_Y,X,Y)+\\mathcal{L}_{GAN}(F,D_X,Y,X)+\\lambda \\mathcal{L}_{cyc}(G,F)\\end{aligned}\\end{equation})
+$$
+\begin{equation}\begin{aligned}&\mathcal{L}_{GAN}(G,D_Y,X,Y)\\&=E_{y\sim p_{data}(y)}[\log D_Y(y)]+E_{x\sim p_{data}(x)}[\log (1-D_Y(G(x))]\\&\mathcal{L}_{cyc}(G,F)=E_{x\sim p_{data}(x)}[\|F(G(x))-x\|_1]+E_{y\sim p_{data}(y)}[\|F(G(y))-y\|_1]\\\Rightarrow&\\&\mathcal{L}(G,F,D_X,D_Y)=\mathcal{L}_{GAN}(G,D_Y,X,Y)+\mathcal{L}_{GAN}(F,D_X,Y,X)+\lambda \mathcal{L}_{cyc}(G,F)\end{aligned}\end{equation}
+$$
 
-where ![](http://latex.codecogs.com/gif.latex?\\lambda) controls the relative important of the two objectives.
+where $\lambda$ controls the relative important of the two objectives.
 
 #### Details
 
-![](http://latex.codecogs.com/gif.latex?G^*,F^* = \\arg \\min\_{G,F} \\max\_{D_X,D_Y} \\mathcal{L})
+$$G^*,F^* = \arg \min_{G,F} \max_{D_X,D_Y} \mathcal{L}$$
