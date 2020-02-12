@@ -12,7 +12,7 @@
 
 #### Loss
 
-![](http://latex.codecogs.com/gif.latex?\\mathcal{L}_{GAN}(G,D_Y,X,Y)=E_{y\sim p_{data}(y)}[\log D_Y(y)]+E_{x\sim p_{data}}(x)[\log(1-D_Y(G(x)))])
+![](http://latex.codecogs.com/gif.latex?\\mathcal{L}{gan}(G,Dy,X,Y)=E^{y\sim p(y)}[\log Dy(y)]+E^{x\sim p(x)}[\log(1-Dy(G(x)))])
 
 ![](http://latex.codecogs.com/gif.latex?\\mathcal{L}_{cyc}(G,F)=E_{x\sim p_{data}(x)}[\|F(G(x))-x\|_1]+E_{y\sim p_{data}(y)}[\|F(G(y))-y\|_1])
 
